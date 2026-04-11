@@ -1,0 +1,503 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Changer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      transition: background-color 0.5s ease;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="changeColor()">Change Color</button>
+
+  <script>
+    function changeColor() {
+      // Generate a random color in hex format
+      const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+      document.body.style.backgroundColor = randomColor;
+    }
+  </script>
+</body> 
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Click Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f0f0f0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .counter-box {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    h1 {
+      font-size: 48px;
+      margin: 20px 0;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background: #00796b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #004d40;
+    }
+  </style>
+</head>
+<body>
+  <div class="counter-box">
+    <h2>Click Counter</h2>
+    <h1 id="counter">0</h1>
+    <button onclick="incrementCounter()">Click Me!</button>
+  </div>
+
+  <script>
+    let count = 0;
+
+    function incrementCounter() {
+      count++;
+      document.getElementById("counter").innerText = count;
+    }
+  </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulb Color Changer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f0f0f0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .bulb {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: yellow;
+      margin: 20px auto;
+      box-shadow: 0 0 40px yellow;
+      transition: background 0.5s, box-shadow 0.5s;
+    }
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      background: #00796b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #004d40;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h2>Bulb Color Changer</h2>
+    <div class="bulb" id="bulb"></div>
+    <button onclick="changeBulbColor()">Change Color</button>
+  </div>
+
+  <script>
+    function changeBulbColor() {
+      const bulb = document.getElementById("bulb");
+      const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+      bulb.style.background = randomColor;
+      bulb.style.boxShadow = `0 0 40px ${randomColor}`;
+    }
+  </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joke Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f0f0f0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      width: 400px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      margin: 20px 0;
+    }
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      background: #00796b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #004d40;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Joke Generator</h2>
+    <p id="joke">Click the button to get a joke!</p>
+    <button onclick="generateJoke()">Get Joke</button>
+  </div>
+
+  <script>
+    const jokes = [
+      "Why don’t scientists trust atoms? Because they make up everything!",
+      "I told my computer I needed a break, and it said: 'No problem, I’ll go to sleep.'",
+      "Why did the scarecrow win an award? Because he was outstanding in his field!",
+      "Parallel lines have so much in common… it’s a shame they’ll never meet.",
+      "Why don’t programmers like nature? Too many bugs."
+    ];
+
+    function generateJoke() {
+      const randomIndex = Math.floor(Math.random() * jokes.length);
+      document.getElementById("joke").innerText = jokes[randomIndex];
+    }
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joke Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f0f0f0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      width: 400px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      margin: 20px 0;
+    }
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      background: #00796b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #004d40;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Joke Generator</h2>
+    <p id="joke">Click the button to get a joke!</p>
+    <button onclick="generateJoke()">Get Joke</button>
+  </div>
+
+  <script>
+    const jokes = [
+      "Why don’t scientists trust atoms? Because they make up everything!",
+      "I told my computer I needed a break, and it said: 'No problem, I’ll go to sleep.'",
+      "Why did the scarecrow win an award? Because he was outstanding in his field!",
+      "Parallel lines have so much in common… it’s a shame they’ll never meet.",
+      "Why don’t programmers like nature? Too many bugs."
+    ];
+
+    function generateJoke() {
+      const randomIndex = Math.floor(Math.random() * jokes.length
+
+
+
+
+      <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joke Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f0f0f0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      width: 400px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      margin: 20px 0;
+    }
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      background: #00796b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #004d40;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Joke Generator</h2>
+    <p id="joke">Click the button to get a joke!</p>
+    <button onclick="generateJoke()">Get Joke</button>
+  </div>
+
+  <script>
+    const jokes = [
+      "Why don’t scientists trust atoms? Because they make up everything!",
+      "I told my computer I needed a break, and it said: 'No problem, I’ll go to sleep.'",
+      "Why did the scarecrow win an award? Because he was outstanding in his field!",
+      "Parallel lines have so much in common… it’s a shame they’ll never meet.",
+      "Why don’t programmers like nature? Too many bugs."
+    ];
+
+    function generateJoke() {
+      const randomIndex = Math.floor(Math.random() * jokes.length);
+      document.getElementById("joke").innerText = jokes[randomIndex];
+    }
+  </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joke Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f0f0f0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      width: 400px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      margin: 20px 0;
+    }
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      background: #00796b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #004d40;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Joke Generator</h2>
+    <p id="joke">Click the button to get a joke!</p>
+    <button onclick="generateJoke()">Get Joke</button>
+  </div>
+
+  <script>
+    const jokes = [
+      "Why don’t scientists trust atoms? Because they make up everything!",
+      "I told my computer I needed a break, and it said: 'No problem, I’ll go to sleep.'",
+      "Why did the scarecrow win an award? Because he was outstanding in his field!",
+      "Parallel lines have so much in common… it’s a shame they’ll never meet.",
+      "Why don’t programmers like nature? Too many bugs."
+    ];
+
+    function generateJoke() {
+      const randomIndex = Math.floor(Math.random() * jokes.length);
+      document.getElementById("joke").innerText = jokes[randomIndex];
+    }
+  </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f0f0f0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .game-container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      width: 400px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      margin: 10px;
+      background: #00796b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #004d40;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <h2>Rock Paper Scissors</h2>
+    <button onclick="play('rock')">Rock</button>
+    <button onclick="play('paper')">Paper</button>
+    <button onclick="play('scissors')">Scissors</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function play(userChoice) {
+      const choices = ["rock", "paper", "scissors"];
+      const computerChoice = choices[Math.floor(Math.random() * 3)];
+      let result = "";
+
+      if (userChoice === computerChoice) {
+        result = `It's a draw! You both chose ${userChoice}.`;
+      } else if (
+        (userChoice === "rock" && computerChoice === "scissors") ||
+        (userChoice === "paper" && computerChoice === "rock") ||
+        (userChoice === "scissors" && computerChoice === "paper")
+      ) {
+        result = `You win! ${userChoice} beats ${computerChoice}.`;
+      } else {
+        result = `You lose! ${computerChoice} beats ${userChoice}.`;
+      }
+
+      document.getElementById("result").innerText = result;
+    }
+  </script>
+</body>
+</html>
